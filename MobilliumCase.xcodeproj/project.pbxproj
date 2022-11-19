@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097B0BD16D1B463C0E4BB11E /* Pods_MobilliumCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E6F4C07AB860BB3DE2354 /* Pods_MobilliumCase.framework */; };
 		982F9ACA29264D94002962E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F9AC929264D94002962E5 /* AppDelegate.swift */; };
 		982F9ACC29264D94002962E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F9ACB29264D94002962E5 /* SceneDelegate.swift */; };
 		982F9ACE29264D94002962E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F9ACD29264D94002962E5 /* ViewController.swift */; };
 		982F9AD129264D94002962E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 982F9ACF29264D94002962E5 /* Main.storyboard */; };
 		982F9AD329264D99002962E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982F9AD229264D99002962E5 /* Assets.xcassets */; };
 		982F9AD629264D99002962E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 982F9AD429264D99002962E5 /* LaunchScreen.storyboard */; };
+		9837032A292797A8004FA698 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98370329292797A8004FA698 /* APIHandler.swift */; };
+		9837032C2927A9F6004FA698 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9837032B2927A9F6004FA698 /* Models.swift */; };
+		9837032E2927F985004FA698 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9837032D2927F985004FA698 /* Typealias.swift */; };
+		983703362928F9A8004FA698 /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983703352928F9A8004FA698 /* URLService.swift */; };
+		983703382928FA1B004FA698 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983703372928FA1B004FA698 /* Extensions.swift */; };
+		9837033A2928FA4D004FA698 /* UpComingLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983703392928FA4D004FA698 /* UpComingLaunchViewController.swift */; };
+		9837033C2928FA87004FA698 /* PastLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9837033B2928FA87004FA698 /* PastLaunchViewController.swift */; };
+		98CE893629268EF900A362D3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CE893529268EF900A362D3 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		616F30F1BCED91E94F7EB080 /* Pods-MobilliumCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilliumCase.debug.xcconfig"; path = "Target Support Files/Pods-MobilliumCase/Pods-MobilliumCase.debug.xcconfig"; sourceTree = "<group>"; };
+		6C5E6F4C07AB860BB3DE2354 /* Pods_MobilliumCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilliumCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9439A5647A6300460624C702 /* Pods-MobilliumCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilliumCase.release.xcconfig"; path = "Target Support Files/Pods-MobilliumCase/Pods-MobilliumCase.release.xcconfig"; sourceTree = "<group>"; };
 		982F9AC629264D93002962E5 /* MobilliumCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilliumCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		982F9AC929264D94002962E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		982F9ACB29264D94002962E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +36,14 @@
 		982F9AD229264D99002962E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		982F9AD529264D99002962E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		982F9AD729264D99002962E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98370329292797A8004FA698 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		9837032B2927A9F6004FA698 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9837032D2927F985004FA698 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		983703352928F9A8004FA698 /* URLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
+		983703372928FA1B004FA698 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		983703392928FA4D004FA698 /* UpComingLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingLaunchViewController.swift; sourceTree = "<group>"; };
+		9837033B2928FA87004FA698 /* PastLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastLaunchViewController.swift; sourceTree = "<group>"; };
+		98CE893529268EF900A362D3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097B0BD16D1B463C0E4BB11E /* Pods_MobilliumCase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6094A991C714D46CF2401659 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				616F30F1BCED91E94F7EB080 /* Pods-MobilliumCase.debug.xcconfig */,
+				9439A5647A6300460624C702 /* Pods-MobilliumCase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		982F9ABD29264D93002962E5 = {
 			isa = PBXGroup;
 			children = (
 				982F9AC829264D93002962E5 /* MobilliumCase */,
 				982F9AC729264D93002962E5 /* Products */,
+				6094A991C714D46CF2401659 /* Pods */,
+				DA1B9F44B894CB50374A167F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +90,69 @@
 			children = (
 				982F9AC929264D94002962E5 /* AppDelegate.swift */,
 				982F9ACB29264D94002962E5 /* SceneDelegate.swift */,
-				982F9ACD29264D94002962E5 /* ViewController.swift */,
-				982F9ACF29264D94002962E5 /* Main.storyboard */,
+				9837034029290AD8004FA698 /* Controllers */,
+				9837033D29290A8D004FA698 /* Service */,
+				9837033E29290AA4004FA698 /* Models */,
+				9837033F29290AB5004FA698 /* View */,
+				9837034129290B05004FA698 /* Helpers */,
 				982F9AD229264D99002962E5 /* Assets.xcassets */,
 				982F9AD429264D99002962E5 /* LaunchScreen.storyboard */,
 				982F9AD729264D99002962E5 /* Info.plist */,
 			);
 			path = MobilliumCase;
+			sourceTree = "<group>";
+		};
+		9837033D29290A8D004FA698 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				98370329292797A8004FA698 /* APIHandler.swift */,
+				983703352928F9A8004FA698 /* URLService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9837033E29290AA4004FA698 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9837032B2927A9F6004FA698 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9837033F29290AB5004FA698 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98CE893529268EF900A362D3 /* TableViewCell.swift */,
+				982F9ACF29264D94002962E5 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9837034029290AD8004FA698 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9837033B2928FA87004FA698 /* PastLaunchViewController.swift */,
+				983703392928FA4D004FA698 /* UpComingLaunchViewController.swift */,
+				982F9ACD29264D94002962E5 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9837034129290B05004FA698 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9837032D2927F985004FA698 /* Typealias.swift */,
+				983703372928FA1B004FA698 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DA1B9F44B894CB50374A167F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C5E6F4C07AB860BB3DE2354 /* Pods_MobilliumCase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 982F9ADA29264D99002962E5 /* Build configuration list for PBXNativeTarget "MobilliumCase" */;
 			buildPhases = (
+				1E7D221F1698905D5232D7B8 /* [CP] Check Pods Manifest.lock */,
 				982F9AC229264D93002962E5 /* Sources */,
 				982F9AC329264D93002962E5 /* Frameworks */,
 				982F9AC429264D93002962E5 /* Resources */,
+				31FA758AB37847A2A156C6B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +223,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E7D221F1698905D5232D7B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobilliumCase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31FA758AB37847A2A156C6B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilliumCase/Pods-MobilliumCase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilliumCase/Pods-MobilliumCase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilliumCase/Pods-MobilliumCase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		982F9AC229264D93002962E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				982F9ACE29264D94002962E5 /* ViewController.swift in Sources */,
+				983703382928FA1B004FA698 /* Extensions.swift in Sources */,
+				98CE893629268EF900A362D3 /* TableViewCell.swift in Sources */,
+				9837033A2928FA4D004FA698 /* UpComingLaunchViewController.swift in Sources */,
+				9837032A292797A8004FA698 /* APIHandler.swift in Sources */,
+				9837032C2927A9F6004FA698 /* Models.swift in Sources */,
 				982F9ACA29264D94002962E5 /* AppDelegate.swift in Sources */,
 				982F9ACC29264D94002962E5 /* SceneDelegate.swift in Sources */,
+				9837033C2928FA87004FA698 /* PastLaunchViewController.swift in Sources */,
+				9837032E2927F985004FA698 /* Typealias.swift in Sources */,
+				983703362928F9A8004FA698 /* URLService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +422,7 @@
 		};
 		982F9ADB29264D99002962E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 616F30F1BCED91E94F7EB080 /* Pods-MobilliumCase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +451,7 @@
 		};
 		982F9ADC29264D99002962E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9439A5647A6300460624C702 /* Pods-MobilliumCase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
