@@ -47,16 +47,46 @@ class UpcomingLaunchViewController: UIViewController {
     var launchImageUrl = URL(string: "")
     var typeString = String()
     var attempString = Bool()
-    var succesString = String ()
+    var succesString = Bool()
     var numberString = Int()
     var upcomingString = Bool()
+    var hourString = Int()
+    var minString = Int()
+    var secString = Int()
+    var dateString = String()
+    var youtubeUrlString = String()
+    var pressKitUrlString = String()
+    var launchDateString = String()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createButtons()
         configureUI()
-       
-    }
+     }
+     
+     func createButtons() {
+         let youtubeGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapYoutube))
+         youtubeGesture.numberOfTapsRequired = 1
+         youtubeView?.isUserInteractionEnabled = true
+         youtubeView?.addGestureRecognizer(youtubeGesture)
+         
+         let pressKitGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPressKit))
+         pressKitGesture.numberOfTapsRequired = 1
+         pressView?.isUserInteractionEnabled = true
+         pressView?.addGestureRecognizer(pressKitGesture)
+     }
+     
+     @objc func didTapYoutube() {
+         if let url = URL(string: youtubeUrlString) {
+             UIApplication.shared.open(url)
+         }
+     }
+     @objc func didTapPressKit() {
+         if let url = URL(string: pressKitUrlString) {
+             UIApplication.shared.open(url)
+         }
+     }
     
     func configureUI () {
         launchImage.layer.cornerRadius = 22
@@ -97,11 +127,15 @@ class UpcomingLaunchViewController: UIViewController {
         launchName.text = launchString
         launchImage.kf.setImage(with: launchImageUrl)
         attemptLabel.text = String(attempString)
-        successLabel.text = succesString
+        successLabel.text = String(succesString)
         typeLabel.text = typeString
         numberLabel.text = String(numberString)
         upcomingLabel.text = String(upcomingString)
-        
+        hourLabel.text = String(hourString)
+        minLabel.text = String(minString)
+        secLabel.text = String(secString)
+        dateLabel.text = dateString
+        launchDate.text = launchDateString
     }
   
 

@@ -25,7 +25,7 @@ struct Flight: Codable {
     let dateUTC: String?
     let dateUnix: Int?
     let dateLocal: Date?
-    let datePrecision: DatePrecision?
+    let datePrecision: String?
     let upcoming: Bool?
     let cores: [Core]?
     let autoUpdate: Bool?
@@ -73,7 +73,7 @@ struct Core: Codable {
     let reused: Bool?
     let landingAttempt: Bool?
     let landingSuccess: Bool?
-    let landingType: LandingType?
+    let landingType: String?
     let landpad: Landpad?
 
     enum CodingKeys: String, CodingKey {
@@ -453,4 +453,5 @@ class JSONAny: Codable {
         }
     }
 }
+
 

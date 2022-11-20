@@ -14,9 +14,9 @@ class PastLaunchViewController: UIViewController {
     
     @IBOutlet weak var launchDate: UILabel!
     
-   
-    @IBOutlet weak var hourLabel: UILabel!
-
+       
+    @IBOutlet weak var timeLabel: UILabel!
+    
     
     @IBOutlet weak var attemptLabel: UILabel!
     @IBOutlet weak var successLabel: UILabel!
@@ -45,14 +45,41 @@ class PastLaunchViewController: UIViewController {
     var launchImageUrl = URL(string: "")
     var typeString = String()
     var attempString = Bool()
-    var succesString = String ()
+    var succesString = Bool()
     var numberString = Int()
     var upcomingString = Bool()
+    var youtubeUrlString = String()
+    var dateString = String()
+    var pressKitUrlString = String()
+    var launchDateString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-       
+       createButtons()
+    }
+    
+    func createButtons() {
+        let youtubeGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapYoutube))
+        youtubeGesture.numberOfTapsRequired = 1
+        youtubeView?.isUserInteractionEnabled = true
+        youtubeView?.addGestureRecognizer(youtubeGesture)
+        
+        let pressKitGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPressKit))
+        pressKitGesture.numberOfTapsRequired = 1
+        pressView?.isUserInteractionEnabled = true
+        pressView?.addGestureRecognizer(pressKitGesture)
+    }
+    
+    @objc func didTapYoutube() {
+        if let url = URL(string: youtubeUrlString) {
+            UIApplication.shared.open(url)
+        }
+    }
+    @objc func didTapPressKit() {
+        if let url = URL(string: pressKitUrlString) {
+            UIApplication.shared.open(url)
+        }
     }
     
     func configureUI () {
@@ -93,10 +120,12 @@ class PastLaunchViewController: UIViewController {
         launchName.text = launchString
         launchImage.kf.setImage(with: launchImageUrl)
         attemptLabel.text = String(attempString)
-        successLabel.text = succesString
+        successLabel.text = String(succesString)
         typeLabel.text = typeString
         numberLabel.text = String(numberString)
         upcomingLabel.text = String(upcomingString)
+        dateLabel.text = dateString
+        timeLabel.text = launchDateString
     }
   
 

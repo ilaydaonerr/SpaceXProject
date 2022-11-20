@@ -4,7 +4,6 @@
 //
 //  Created by İlayda Öner on 17.11.2022.
 //
-
 import UIKit
 import Kingfisher
 
@@ -79,6 +78,10 @@ extension ViewController: ConfigureTableView {
         
        cell.launchesNameLabel.text = flights[indexPath.row].name
         cell.launchesImageView.kf.setImage(with: URL(string: flights[indexPath.row].links?.patch?.small ?? "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png"))
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        cell.launchesDateLabel.text = dateFormatter.string(from: flights[indexPath.row].dateLocal ?? Date())
         return cell
         
     }
@@ -86,22 +89,22 @@ extension ViewController: ConfigureTableView {
         return 108
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let name = flights[indexPath.row].name, let imageUrl = URL(string: flights[indexPath.row].links?.patch?.small ?? "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png") else { return }
-          let attemp = flights[indexPath.row].cores
-          let success = flights[indexPath.row].success
-          let type = flights[indexPath.row].cores
-          let upcoming = flights[indexPath.row].upcoming
-
+    
         if flights.count == upcomingFlights.count {
             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpcomingLaunchViewController") as? UpcomingLaunchViewController {
-                viewController.launchString = name
-                viewController.launchImageUrl = imageUrl
-                viewController.attempString = (attemp != nil)
-//                viewController.succesString = success
-//                viewController.typeString = type
-//                viewController.upcomingString = upcoming
+                viewController.launchString = flights[indexPath.row].name ?? "Unknown Name"
+                viewController.launchImageUrl = URL(string: flights[indexPath.row].links?.patch?.small ?? "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png")
+                viewController.upcomingString = flights[indexPath.row].upcoming ?? true
+                (viewController.attempString = (flights[indexPath.row].cores != nil))
+                viewController.succesString = flights[indexPath.row].success ?? true
+                viewController.numberString = flights[indexPath.row].flightNumber ?? 91
+                viewController.youtubeUrlString = flights[indexPath.row].links?.webcast ?? ""
+                viewController.pressKitUrlString = flights[indexPath.row].links?.presskit ?? ""
+                viewController.dateString = flights[indexPath.row].datePrecision ?? "hour"
                 
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy.MM.dd"
+                viewController.launchDateString = dateFormatter.string(from: flights[indexPath.row].dateLocal ?? Date())
                 
                 
                   if let navigator = navigationController {
@@ -110,8 +113,18 @@ extension ViewController: ConfigureTableView {
               }
         }else {
             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PastLaunchViewController") as? PastLaunchViewController {
-                  viewController.launchString = name
-                viewController.launchImageUrl = imageUrl
+                  viewController.launchString = flights[indexPath.row].name ?? "Unknown Name"
+                viewController.launchImageUrl = URL(string: flights[indexPath.row].links?.patch?.small ?? "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png")
+                viewController.upcomingString = flights[indexPath.row].upcoming ?? true
+                viewController.attempString = (flights[indexPath.row].cores != nil)
+                viewController.succesString = flights[indexPath.row].success ?? true
+                viewController.numberString = flights[indexPath.row].flightNumber ?? 91
+                viewController.youtubeUrlString = flights[indexPath.row].links?.webcast ?? ""
+                viewController.pressKitUrlString = flights[indexPath.row].links?.presskit ?? ""
+                viewController.dateString = flights[indexPath.row].datePrecision ?? "hour"
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy.MM.dd"
+                viewController.launchDateString = dateFormatter.string(from: flights[indexPath.row].dateLocal ?? Date())
                   if let navigator = navigationController {
                       navigator.pushViewController(viewController, animated: true)
                   }
