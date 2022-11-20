@@ -127,27 +127,37 @@
                                     <action selector="didChangeSegment:" destination="NdB-uh-opb" eventType="valueChanged" id="b89-U2-euY"/>
                                 </connections>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pa9-5R-iUz">
+                                <rect key="frame" x="145" y="329" width="100" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="KFf-gM-Jow"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dxA-3Q-l1C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dxA-3Q-l1C" firstAttribute="bottom" secondItem="pa9-5R-iUz" secondAttribute="bottom" constant="400" id="3RN-MI-poD"/>
                             <constraint firstItem="uqv-G5-XC4" firstAttribute="leading" secondItem="dxA-3Q-l1C" secondAttribute="leading" constant="20" id="Ad2-2o-6wL"/>
+                            <constraint firstItem="pa9-5R-iUz" firstAttribute="leading" secondItem="dxA-3Q-l1C" secondAttribute="leading" constant="145" id="MzZ-Yv-I6p"/>
                             <constraint firstItem="uqv-G5-XC4" firstAttribute="top" secondItem="dxA-3Q-l1C" secondAttribute="top" constant="5" id="TpT-gs-KvN"/>
                             <constraint firstItem="dxA-3Q-l1C" firstAttribute="bottom" secondItem="2Qv-f7-QqF" secondAttribute="bottom" id="UX8-iF-J0i"/>
                             <constraint firstItem="2Qv-f7-QqF" firstAttribute="leading" secondItem="dxA-3Q-l1C" secondAttribute="leading" constant="20" id="VHb-z9-6g6"/>
                             <constraint firstItem="2Qv-f7-QqF" firstAttribute="top" secondItem="uqv-G5-XC4" secondAttribute="bottom" constant="32" id="Wwm-oL-Roi"/>
                             <constraint firstItem="dxA-3Q-l1C" firstAttribute="trailing" secondItem="uqv-G5-XC4" secondAttribute="trailing" constant="20" id="nFx-xP-HDv"/>
                             <constraint firstItem="dxA-3Q-l1C" firstAttribute="trailing" secondItem="2Qv-f7-QqF" secondAttribute="trailing" constant="20" id="qPh-yh-XeV"/>
+                            <constraint firstItem="dxA-3Q-l1C" firstAttribute="trailing" secondItem="pa9-5R-iUz" secondAttribute="trailing" constant="145" id="tB2-VY-Ao9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Launches" id="yPc-ZZ-rIu"/>
                     <connections>
+                        <outlet property="spinner" destination="pa9-5R-iUz" id="e7x-3t-Ilx"/>
                         <outlet property="tableView" destination="2Qv-f7-QqF" id="mRR-po-U4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNv-1S-aVX" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="-109"/>
+            <point key="canvasLocation" x="540" y="-109.47867298578198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ubm-Fo-wkv">

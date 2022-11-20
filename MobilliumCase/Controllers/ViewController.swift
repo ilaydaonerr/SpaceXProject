@@ -9,12 +9,14 @@ import Kingfisher
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     var flights: [Flight] = [] {
        didSet {
            DispatchQueue.main.async {
                self.tableView.reloadData()
+               self.spinner.stopAnimating()
            }
        }
    }
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
