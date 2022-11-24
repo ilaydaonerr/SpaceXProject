@@ -9,7 +9,24 @@ import UIKit
 import Kingfisher
 
 class UpcomingLaunchViewController: UIViewController {
-
+    var timerSecond = 2940
+    var timer = Timer()
+    
+    var launchString = String()
+    var launchImageUrl = URL(string: "")
+    var typeString = String()
+    var attempString = Bool()
+    var succesString = Bool()
+    var numberString = Int()
+    var upcomingString = Bool()
+    var hourString = Int()
+    var minString = Int()
+    var secString = Int()
+    var dateString = String()
+    var youtubeUrlString = String()
+    var pressKitUrlString = String()
+    var launchDateString = String()
+    
     @IBOutlet weak var launchName: UILabel!
     @IBOutlet weak var launchImage: UIImageView!
     
@@ -43,50 +60,57 @@ class UpcomingLaunchViewController: UIViewController {
     
     @IBOutlet weak var sixthView: UIView!
     
-    var launchString = String()
-    var launchImageUrl = URL(string: "")
-    var typeString = String()
-    var attempString = Bool()
-    var succesString = Bool()
-    var numberString = Int()
-    var upcomingString = Bool()
-    var hourString = Int()
-    var minString = Int()
-    var secString = Int()
-    var dateString = String()
-    var youtubeUrlString = String()
-    var pressKitUrlString = String()
-    var launchDateString = String()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTimer()
         createButtons()
         configureUI()
-     }
-     
-     func createButtons() {
-         let youtubeGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapYoutube))
-         youtubeGesture.numberOfTapsRequired = 1
-         youtubeView?.isUserInteractionEnabled = true
-         youtubeView?.addGestureRecognizer(youtubeGesture)
-         
-         let pressKitGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPressKit))
-         pressKitGesture.numberOfTapsRequired = 1
-         pressView?.isUserInteractionEnabled = true
-         pressView?.addGestureRecognizer(pressKitGesture)
-     }
-     
-     @objc func didTapYoutube() {
-         if let url = URL(string: youtubeUrlString) {
-             UIApplication.shared.open(url)
-         }
-     }
-     @objc func didTapPressKit() {
-         if let url = URL(string: pressKitUrlString) {
-             UIApplication.shared.open(url)
-         }
-     }
+        convertOutletsToString()
+    }
+    func setupTimer(){
+        secLabel.text = String(format: "%02i", timerSecond % 60)
+        minLabel.text = String(format: "%02i", timerSecond / 60  % 60)
+        hourLabel.text = String(format: "%02i", timerSecond / 3600  % 60)
+        runTimer()
+    }
+    func runTimer(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    //MARK Selectors and Observers
+    
+    @objc func updateTimer(){
+        
+        timerSecond = timerSecond - 1
+        secLabel.text = String(format: "%02i", timerSecond % 60)
+        minLabel.text = String(format: "%02i", timerSecond / 60  % 60)
+        hourLabel.text = String(format: "%02i", timerSecond / 3600  % 60)
+    }
+    
+    
+    func createButtons() {
+        let youtubeGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapYoutube))
+        youtubeGesture.numberOfTapsRequired = 1
+        youtubeView?.isUserInteractionEnabled = true
+        youtubeView?.addGestureRecognizer(youtubeGesture)
+        
+        let pressKitGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPressKit))
+        pressKitGesture.numberOfTapsRequired = 1
+        pressView?.isUserInteractionEnabled = true
+        pressView?.addGestureRecognizer(pressKitGesture)
+    }
+    
+    @objc func didTapYoutube() {
+        if let url = URL(string: youtubeUrlString) {
+            UIApplication.shared.open(url)
+        }
+    }
+    @objc func didTapPressKit() {
+        if let url = URL(string: pressKitUrlString) {
+            UIApplication.shared.open(url)
+        }
+    }
     
     func configureUI () {
         launchImage.layer.cornerRadius = 22
@@ -123,21 +147,24 @@ class UpcomingLaunchViewController: UIViewController {
         secondView.roundCorners(corners: .topRight, radius: 10)
         fifthView.roundCorners(corners: .bottomLeft, radius: 10)
         sixthView.roundCorners(corners: .bottomRight, radius: 10)
-        
-        launchName.text = launchString
-        launchImage.kf.setImage(with: launchImageUrl)
-        attemptLabel.text = String(attempString)
-        successLabel.text = String(succesString)
-        typeLabel.text = typeString
-        numberLabel.text = String(numberString)
-        upcomingLabel.text = String(upcomingString)
-        hourLabel.text = String(hourString)
-        minLabel.text = String(minString)
-        secLabel.text = String(secString)
-        dateLabel.text = dateString
-        launchDate.text = launchDateString
     }
-  
+        
+        func convertOutletsToString() {
+            launchName.text = launchString
+            launchImage.kf.setImage(with: launchImageUrl)
+            attemptLabel.text = String(attempString)
+            successLabel.text = String(succesString)
+            typeLabel.text = typeString
+            numberLabel.text = String(numberString)
+            upcomingLabel.text = String(upcomingString)
+            hourLabel.text = String(hourString)
+            minLabel.text = String(minString)
+            secLabel.text = String(secString)
+            dateLabel.text = dateString
+            launchDate.text = launchDateString
+        }
+        
+        
+        
+    }
 
-
-}
